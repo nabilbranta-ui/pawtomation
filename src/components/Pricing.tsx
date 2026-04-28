@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Check, Sparkles, ArrowRight, Coins } from "lucide-react";
+import { BookDemoDialog } from "./BookDemoDialog";
 
 const features = [
   "Unlimited patients & records",
@@ -15,6 +16,7 @@ const features = [
 
 export function Pricing() {
   const [yearly, setYearly] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
   const price = yearly ? "24,000" : "2,000";
   const unit = yearly ? "/year" : "/month";
 
@@ -131,7 +133,7 @@ export function Pricing() {
               Billed {yearly ? "annually" : "monthly"} · Cancel anytime · No setup fees
             </p>
 
-            <button className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-teal to-teal/80 px-6 py-4 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.015] hover:shadow-[0_20px_60px_-15px_oklch(0.72_0.14_185/0.7)]">
+            <button onClick={() => setDemoOpen(true)} className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-br from-teal to-teal/80 px-6 py-4 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.015] hover:shadow-[0_20px_60px_-15px_oklch(0.72_0.14_185/0.7)]">
               Start 14-day free trial
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </button>
@@ -180,6 +182,7 @@ export function Pricing() {
           </div>
         </motion.div>
       </div>
+      <BookDemoDialog open={demoOpen} onOpenChange={setDemoOpen} />
     </section>
   );
 }
