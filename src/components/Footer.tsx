@@ -169,33 +169,38 @@ export function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-bold tracking-tight">{col.title}</h4>
+              <h4 className="text-sm font-extrabold tracking-tight">{col.title}</h4>
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href="#"
-                      className="group inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      <span className="relative">
-                        {l}
-                        <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-teal to-peach transition-all duration-300 group-hover:w-full" />
-                      </span>
-                    </a>
-                  </li>
-                ))}
+                {col.links.map((l) => {
+                  const content = (
+                    <span className="relative">
+                      {l.label}
+                      <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-teal to-peach transition-all duration-300 group-hover:w-full" />
+                    </span>
+                  );
+                  const className = "group inline-flex items-center text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground";
+                  return (
+                    <li key={l.label}>
+                      {l.hash ? (
+                        <a href={l.to} className={className}>{content}</a>
+                      ) : (
+                        <Link to={l.to} className={className}>{content}</Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs text-muted-foreground md:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs font-bold text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} Pawtomation, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-foreground">Privacy</a>
-            <a href="#" className="transition-colors hover:text-foreground">Terms</a>
-            <a href="#" className="transition-colors hover:text-foreground">Security</a>
-            <a href="#" className="transition-colors hover:text-foreground">Cookies</a>
+            <Link to="/privacy-policy" className="transition-colors hover:text-foreground">Privacy</Link>
+            <Link to="/terms-of-service" className="transition-colors hover:text-foreground">Terms</Link>
+            <Link to="/security" className="transition-colors hover:text-foreground">Security</Link>
+            <Link to="/cookies" className="transition-colors hover:text-foreground">Cookies</Link>
           </div>
         </div>
       </div>
