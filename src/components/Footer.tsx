@@ -1,21 +1,32 @@
 import { useState } from "react";
 import type { SVGProps, CSSProperties } from "react";
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { PawPrint, ArrowRight, Mail, Phone } from "lucide-react";
 import { BookDemoDialog } from "./BookDemoDialog";
 
-const columns = [
+const columns: { title: string; links: { label: string; to: string; hash?: boolean }[] }[] = [
   {
     title: "Product",
-    links: ["Features", "Pricing", "Integrations", "Changelog", "Roadmap"],
+    links: [
+      { label: "Features", to: "/#features", hash: true },
+      { label: "Pricing", to: "/#pricing", hash: true },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Customers", "Careers", "Press", "Contact"],
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Customers", to: "/our-customers" },
+      { label: "Contact", to: "/contact" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Documentation", "Help center", "Community", "API reference", "Status"],
+    links: [
+      { label: "Help centre", to: "/help-centre" },
+      { label: "Status", to: "/realtime-status" },
+    ],
   },
 ];
 
