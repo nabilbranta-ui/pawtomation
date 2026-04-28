@@ -171,24 +171,19 @@ export function Footer() {
             <div key={col.title}>
               <h4 className="text-sm font-extrabold tracking-tight">{col.title}</h4>
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((l) => {
-                  const content = (
-                    <span className="relative">
-                      {l.label}
-                      <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-teal to-peach transition-all duration-300 group-hover:w-full" />
-                    </span>
-                  );
-                  const className = "group inline-flex items-center text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground";
-                  return (
-                    <li key={l.label}>
-                      {l.hash ? (
-                        <a href={l.to} className={className}>{content}</a>
-                      ) : (
-                        <Link to={l.to} className={className}>{content}</Link>
-                      )}
-                    </li>
-                  );
-                })}
+                {col.links.map((l) => (
+                  <li key={l.label}>
+                    <a
+                      href={l.to}
+                      className="group inline-flex items-center text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <span className="relative">
+                        {l.label}
+                        <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-teal to-peach transition-all duration-300 group-hover:w-full" />
+                      </span>
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
