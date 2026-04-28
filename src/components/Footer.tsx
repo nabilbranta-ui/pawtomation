@@ -192,10 +192,10 @@ export function Footer() {
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs font-bold text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} Pawtomation, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="transition-colors hover:text-foreground">Privacy</Link>
-            <Link to="/terms-of-service" className="transition-colors hover:text-foreground">Terms</Link>
-            <Link to="/security" className="transition-colors hover:text-foreground">Security</Link>
-            <Link to="/cookies" className="transition-colors hover:text-foreground">Cookies</Link>
+            <a href="/privacy-policy" className="transition-colors hover:text-foreground">Privacy</a>
+            <a href="/terms-of-service" className="transition-colors hover:text-foreground">Terms</a>
+            <a href="/security" className="transition-colors hover:text-foreground">Security</a>
+            <a href="/cookies" className="transition-colors hover:text-foreground">Cookies</a>
           </div>
         </div>
       </div>
