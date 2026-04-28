@@ -53,7 +53,7 @@ export function Footer() {
               </span>
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-              Join 2,400+ clinics running their entire practice on Pawfolio. Free 14-day trial, no card required.
+              Join 2,400+ clinics running their entire practice on Pawtomation. Free 14-day trial, no card required.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
               <button onClick={() => setDemoOpen(true)} className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-teal to-teal/80 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_20px_60px_-15px_oklch(0.72_0.14_185/0.7)]">
@@ -74,7 +74,7 @@ export function Footer() {
               <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-teal to-peach text-white shadow-md">
                 <PawPrint className="size-5" strokeWidth={2.4} />
               </span>
-              <span className="text-lg font-bold tracking-tight">Pawfolio</span>
+              <span className="text-lg font-bold tracking-tight">Pawtomation</span>
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               The all-in-one pet clinic management platform — built for modern veterinary teams.
@@ -115,7 +115,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} Pawfolio, Inc. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Pawtomation, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <a href="#" className="transition-colors hover:text-foreground">Privacy</a>
             <a href="#" className="transition-colors hover:text-foreground">Terms</a>

@@ -182,6 +182,7 @@ export function Pricing() {
           </div>
         </motion.div>
       </div>
+      <BookDemoDialog open={demoOpen} onOpenChange={setDemoOpen} />
     </section>
   );
 }
