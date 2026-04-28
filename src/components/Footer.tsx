@@ -107,9 +107,9 @@ export function Footer() {
               <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-teal to-peach text-white shadow-md">
                 <PawPrint className="size-5" strokeWidth={2.4} />
               </span>
-              <span className="text-lg font-bold tracking-tight">Pawtomation</span>
+              <span className="text-lg font-extrabold tracking-tight">Pawtomation</span>
             </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-xs text-sm font-medium leading-relaxed text-muted-foreground">
               The all-in-one pet clinic management platform — built for modern veterinary teams.
             </p>
             <div className="mt-6 flex items-center gap-2.5">
