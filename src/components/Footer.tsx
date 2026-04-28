@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { SVGProps, CSSProperties } from "react";
 import { motion } from "framer-motion";
-import { Link } from "@tanstack/react-router";
+
 import { PawPrint, ArrowRight, Mail, Phone } from "lucide-react";
 import { BookDemoDialog } from "./BookDemoDialog";
 
