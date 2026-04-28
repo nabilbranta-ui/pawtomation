@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Pawtomation" },
+      { name: "description", content: "Pawfectly Managed is a modern SaaS platform designed for comprehensive pet clinic management." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Pawtomation" },
+      { property: "og:description", content: "Pawfectly Managed is a modern SaaS platform designed for comprehensive pet clinic management." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Pawtomation" },
+      { name: "twitter:description", content: "Pawfectly Managed is a modern SaaS platform designed for comprehensive pet clinic management." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83915065-3079-48b3-89a9-683f8599e3a6/id-preview-fa1f84d3--0e328e82-ce1f-4b67-9390-dc2d9bcc4941.lovable.app-1777370546614.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83915065-3079-48b3-89a9-683f8599e3a6/id-preview-fa1f84d3--0e328e82-ce1f-4b67-9390-dc2d9bcc4941.lovable.app-1777370546614.png" },
     ],
     links: [
       {
