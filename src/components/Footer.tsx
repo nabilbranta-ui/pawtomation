@@ -28,7 +28,7 @@ const socials = [
 export function Footer() {
   const [demoOpen, setDemoOpen] = useState(false);
   return (
-    <footer className="relative pt-24 pb-10">
+    <footer className="relative pt-14 pb-8">
       <div className="mx-auto max-w-7xl px-6">
         {/* Final CTA */}
         <motion.div
