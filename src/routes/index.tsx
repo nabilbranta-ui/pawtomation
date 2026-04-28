@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MeshBackground } from "@/components/MeshBackground";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { CoreModules } from "@/components/CoreModules";
+import { KeyBenefits } from "@/components/KeyBenefits";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -25,6 +27,8 @@ function Index() {
       <MeshBackground />
       <Navbar />
       <Hero />
+      <CoreModules />
+      <KeyBenefits />
     </main>
   );
 }
