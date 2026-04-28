@@ -1,12 +1,12 @@
 import { useRef, type MouseEvent } from "react";
 import { motion } from "framer-motion";
-import { Building2, Stethoscope, PawPrint, LineChart, ShieldCheck, type LucideIcon } from "lucide-react";
+import { Building2, Stethoscope, PawPrint, LineChart, type LucideIcon } from "lucide-react";
 
 type Module = {
   icon: LucideIcon;
   title: string;
   desc: string;
-  tint: string; // oklch color
+  tint: string;
   glow: string;
 };
 
@@ -14,37 +14,30 @@ const modules: Module[] = [
   {
     icon: Building2,
     title: "Central Reception",
-    desc: "Front-desk check-ins, queue management and multi-clinic routing in one calm interface.",
+    desc: "Parent & pet profiles, services, products, vaccines, invoicing, live queue and low-stock alerts — all from the front desk.",
     tint: "oklch(0.72 0.14 185)",
     glow: "oklch(0.72 0.14 185 / 0.45)",
   },
   {
     icon: Stethoscope,
     title: "Doctor's Panel",
-    desc: "Digital SOAP notes, prescriptions and full medical history at every consultation.",
+    desc: "Digital prescriptions, test reports, vaccinations and surgery notes. Every pet's full medical folder at a glance.",
     tint: "oklch(0.78 0.13 45)",
     glow: "oklch(0.78 0.13 45 / 0.45)",
   },
   {
     icon: PawPrint,
     title: "Pet Parent Dashboard",
-    desc: "Owners book appointments, view records and get vaccine reminders — on any device.",
+    desc: "Parents book appointments, upload photos, track vaccination and deworming dates, and keep every pet's history in one place.",
     tint: "oklch(0.70 0.14 320)",
     glow: "oklch(0.70 0.14 320 / 0.45)",
   },
   {
     icon: LineChart,
     title: "Owner's Analytics",
-    desc: "Revenue, retention and treatment KPIs visualized in real-time across locations.",
+    desc: "Doctor performance, LTV leaderboards, conversion rates, retention and supplier ratings — live across every branch.",
     tint: "oklch(0.72 0.15 145)",
     glow: "oklch(0.72 0.15 145 / 0.45)",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Super Admin",
-    desc: "Granular roles, audit trails and compliance controls for multi-branch operators.",
-    tint: "oklch(0.65 0.16 260)",
-    glow: "oklch(0.65 0.16 260 / 0.45)",
   },
 ];
 
@@ -130,12 +123,12 @@ export function CoreModules() {
             </span>
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            From the reception desk to the executive dashboard — Pawfolio brings your entire clinic into one
-            seamless workspace.
+            Four purpose-built panels — reception, doctors, pet parents and owners — working together on one
+            multi-tenant platform tailored to your clinic.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
           {modules.map((m, i) => (
             <TiltCard key={m.title} module={m} index={i} />
           ))}

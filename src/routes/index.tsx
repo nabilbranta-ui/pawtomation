@@ -7,19 +7,20 @@ import { KeyBenefits } from "@/components/KeyBenefits";
 import { Testimonials } from "@/components/Testimonials";
 import { Pricing } from "@/components/Pricing";
 import { About } from "@/components/About";
+import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Pawfolio — All-in-one Pet Clinic Management Software" },
+      { title: "Pawtomation — All-in-one Pet Clinic Management Software" },
       {
         name: "description",
         content:
-          "Pawfolio is a modern pet clinic management platform. Appointments, medical records, billing and reminders — beautifully unified.",
+          "Pawtomation is a modern pet clinic management platform. Appointments, medical records, billing and reminders — beautifully unified.",
       },
-      { property: "og:title", content: "Pawfolio — Pet Clinic Management, Reimagined" },
+      { property: "og:title", content: "Pawtomation — Pet Clinic Management, Reimagined" },
       { property: "og:description", content: "The all-in-one software for modern veterinary clinics." },
     ],
   }),
@@ -36,6 +37,7 @@ function Index() {
       <Testimonials />
       <Pricing />
       <About />
+      <FAQ />
       <Footer />
     </main>
   );

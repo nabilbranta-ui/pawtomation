@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { PawPrint, Twitter, Linkedin, Github, Instagram, ArrowRight } from "lucide-react";
+import { BookDemoDialog } from "./BookDemoDialog";
 
 const columns = [
   {
@@ -24,6 +26,7 @@ const socials = [
 ];
 
 export function Footer() {
+  const [demoOpen, setDemoOpen] = useState(false);
   return (
     <footer className="relative pt-24 pb-10">
       <div className="mx-auto max-w-7xl px-6">
@@ -53,13 +56,13 @@ export function Footer() {
               Join 2,400+ clinics running their entire practice on Pawfolio. Free 14-day trial, no card required.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-              <button className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-teal to-teal/80 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_20px_60px_-15px_oklch(0.72_0.14_185/0.7)]">
+              <button onClick={() => setDemoOpen(true)} className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-teal to-teal/80 px-6 py-3.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_20px_60px_-15px_oklch(0.72_0.14_185/0.7)]">
                 Get Started
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </button>
-              <button className="glass inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-white/80">
+              <a href="mailto:hello@pawtomation.com" className="glass inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-semibold text-foreground transition-all duration-300 hover:scale-[1.03] hover:bg-white/80">
                 Talk to sales
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -121,6 +124,7 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <BookDemoDialog open={demoOpen} onOpenChange={setDemoOpen} />
     </footer>
   );
 }
