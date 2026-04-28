@@ -18,7 +18,7 @@ const pillars = [
 
 export function About() {
   return (
-    <section id="about" className="relative py-20 md:py-28">
+    <section id="about" className="relative py-14 md:py-20">
       <div className="mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -9,7 +9,7 @@ export function Hero() {
   const [demoOpen, setDemoOpen] = useState(false);
 
   return (
-    <section className="relative pt-36 pb-24 md:pt-44 md:pb-32">
+    <section className="relative pt-28 pb-12 md:pt-32 md:pb-16">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2">
         <div className="animate-fade-up">
           <div className="glass inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-semibold text-foreground/80">

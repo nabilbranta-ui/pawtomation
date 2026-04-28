@@ -104,7 +104,7 @@ function TiltCard({ module: m, index }: { module: Module; index: number }) {
 
 export function CoreModules() {
   return (
-    <section id="features" className="relative py-24 md:py-32">
+    <section id="features" className="relative py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
