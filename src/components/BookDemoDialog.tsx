@@ -33,11 +33,11 @@ export function BookDemoDialog({ open, onOpenChange }: { open: boolean; onOpenCh
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, y: 10 }}
                 transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                className="fixed left-1/2 top-1/2 z-[70] w-[min(520px,calc(100%-2rem))] max-h-[92vh] overflow-y-auto -translate-x-1/2 -translate-y-1/2"
+                className="fixed left-1/2 top-1/2 z-[70] w-[min(520px,calc(100%-2rem))] max-h-[92vh] -translate-x-1/2 -translate-y-1/2"
               >
-                <div className="relative">
+                <div className="relative max-h-[92vh] overflow-y-auto overflow-x-hidden rounded-[2rem] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/15 [&::-webkit-scrollbar-track]:bg-transparent">
                   <div
-                    className="absolute -inset-[2px] rounded-[2rem] opacity-70 blur-xl"
+                    className="pointer-events-none absolute -inset-[2px] rounded-[2rem] opacity-70 blur-xl"
                     style={{ background: "linear-gradient(135deg, oklch(0.80 0.13 45 / 0.55), oklch(0.72 0.14 185 / 0.4))" }}
                   />
                   <div className="glass-strong relative rounded-[1.75rem] p-7">
