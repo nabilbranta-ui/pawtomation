@@ -158,8 +158,8 @@ export function Footer() {
                       <c.Icon className="size-4" />
                     </span>
                     <span className="flex flex-col leading-tight">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</span>
-                      <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-foreground">{c.value}</span>
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">{c.label}</span>
+                      <span className="text-sm font-extrabold text-foreground transition-colors group-hover:text-foreground">{c.value}</span>
                     </span>
                   </a>
                 </li>
