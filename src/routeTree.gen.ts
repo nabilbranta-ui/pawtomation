@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsOfServiceRouteImport } from './routes/terms-of-service'
+import { Route as SecurityRouteImport } from './routes/security'
+import { Route as RealtimeStatusRouteImport } from './routes/realtime-status'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as OurCustomersRouteImport } from './routes/our-customers'
+import { Route as HelpCentreRouteImport } from './routes/help-centre'
+import { Route as CookiesRouteImport } from './routes/cookies'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TermsOfServiceRoute = TermsOfServiceRouteImport.update({
+  id: '/terms-of-service',
+  path: '/terms-of-service',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SecurityRoute = SecurityRouteImport.update({
+  id: '/security',
+  path: '/security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RealtimeStatusRoute = RealtimeStatusRouteImport.update({
+  id: '/realtime-status',
+  path: '/realtime-status',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurCustomersRoute = OurCustomersRouteImport.update({
+  id: '/our-customers',
+  path: '/our-customers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpCentreRoute = HelpCentreRouteImport.update({
+  id: '/help-centre',
+  path: '/help-centre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/help-centre': typeof HelpCentreRoute
+  '/our-customers': typeof OurCustomersRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/realtime-status': typeof RealtimeStatusRoute
+  '/security': typeof SecurityRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/help-centre': typeof HelpCentreRoute
+  '/our-customers': typeof OurCustomersRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/realtime-status': typeof RealtimeStatusRoute
+  '/security': typeof SecurityRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/cookies': typeof CookiesRoute
+  '/help-centre': typeof HelpCentreRoute
+  '/our-customers': typeof OurCustomersRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/realtime-status': typeof RealtimeStatusRoute
+  '/security': typeof SecurityRoute
+  '/terms-of-service': typeof TermsOfServiceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/cookies'
+    | '/help-centre'
+    | '/our-customers'
+    | '/privacy-policy'
+    | '/realtime-status'
+    | '/security'
+    | '/terms-of-service'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/cookies'
+    | '/help-centre'
+    | '/our-customers'
+    | '/privacy-policy'
+    | '/realtime-status'
+    | '/security'
+    | '/terms-of-service'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/cookies'
+    | '/help-centre'
+    | '/our-customers'
+    | '/privacy-policy'
+    | '/realtime-status'
+    | '/security'
+    | '/terms-of-service'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  CookiesRoute: typeof CookiesRoute
+  HelpCentreRoute: typeof HelpCentreRoute
+  OurCustomersRoute: typeof OurCustomersRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  RealtimeStatusRoute: typeof RealtimeStatusRoute
+  SecurityRoute: typeof SecurityRoute
+  TermsOfServiceRoute: typeof TermsOfServiceRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms-of-service': {
+      id: '/terms-of-service'
+      path: '/terms-of-service'
+      fullPath: '/terms-of-service'
+      preLoaderRoute: typeof TermsOfServiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/security': {
+      id: '/security'
+      path: '/security'
+      fullPath: '/security'
+      preLoaderRoute: typeof SecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/realtime-status': {
+      id: '/realtime-status'
+      path: '/realtime-status'
+      fullPath: '/realtime-status'
+      preLoaderRoute: typeof RealtimeStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-customers': {
+      id: '/our-customers'
+      path: '/our-customers'
+      fullPath: '/our-customers'
+      preLoaderRoute: typeof OurCustomersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help-centre': {
+      id: '/help-centre'
+      path: '/help-centre'
+      fullPath: '/help-centre'
+      preLoaderRoute: typeof HelpCentreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +237,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  CookiesRoute: CookiesRoute,
+  HelpCentreRoute: HelpCentreRoute,
+  OurCustomersRoute: OurCustomersRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  RealtimeStatusRoute: RealtimeStatusRoute,
+  SecurityRoute: SecurityRoute,
+  TermsOfServiceRoute: TermsOfServiceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -1,21 +1,32 @@
 import { useState } from "react";
 import type { SVGProps, CSSProperties } from "react";
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 import { PawPrint, ArrowRight, Mail, Phone } from "lucide-react";
 import { BookDemoDialog } from "./BookDemoDialog";
 
-const columns = [
+const columns: { title: string; links: { label: string; to: string; hash?: boolean }[] }[] = [
   {
     title: "Product",
-    links: ["Features", "Pricing", "Integrations", "Changelog", "Roadmap"],
+    links: [
+      { label: "Features", to: "/#features", hash: true },
+      { label: "Pricing", to: "/#pricing", hash: true },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Customers", "Careers", "Press", "Contact"],
+    links: [
+      { label: "About", to: "/about" },
+      { label: "Customers", to: "/our-customers" },
+      { label: "Contact", to: "/contact" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Documentation", "Help center", "Community", "API reference", "Status"],
+    links: [
+      { label: "Help centre", to: "/help-centre" },
+      { label: "Status", to: "/realtime-status" },
+    ],
   },
 ];
 
@@ -96,9 +107,9 @@ export function Footer() {
               <span className="grid size-9 place-items-center rounded-xl bg-gradient-to-br from-teal to-peach text-white shadow-md">
                 <PawPrint className="size-5" strokeWidth={2.4} />
               </span>
-              <span className="text-lg font-bold tracking-tight">Pawtomation</span>
+              <span className="text-lg font-extrabold tracking-tight">Pawtomation</span>
             </a>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-xs text-sm font-medium leading-relaxed text-muted-foreground">
               The all-in-one pet clinic management platform — built for modern veterinary teams.
             </p>
             <div className="mt-6 flex items-center gap-2.5">
@@ -147,8 +158,8 @@ export function Footer() {
                       <c.Icon className="size-4" />
                     </span>
                     <span className="flex flex-col leading-tight">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</span>
-                      <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-foreground">{c.value}</span>
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">{c.label}</span>
+                      <span className="text-sm font-extrabold text-foreground transition-colors group-hover:text-foreground">{c.value}</span>
                     </span>
                   </a>
                 </li>
@@ -158,33 +169,38 @@ export function Footer() {
 
           {columns.map((col) => (
             <div key={col.title}>
-              <h4 className="text-sm font-bold tracking-tight">{col.title}</h4>
+              <h4 className="text-sm font-extrabold tracking-tight">{col.title}</h4>
               <ul className="mt-4 space-y-2.5">
-                {col.links.map((l) => (
-                  <li key={l}>
-                    <a
-                      href="#"
-                      className="group inline-flex items-center text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                      <span className="relative">
-                        {l}
-                        <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-teal to-peach transition-all duration-300 group-hover:w-full" />
-                      </span>
-                    </a>
-                  </li>
-                ))}
+                {col.links.map((l) => {
+                  const content = (
+                    <span className="relative">
+                      {l.label}
+                      <span className="absolute -bottom-0.5 left-0 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-teal to-peach transition-all duration-300 group-hover:w-full" />
+                    </span>
+                  );
+                  const className = "group inline-flex items-center text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground";
+                  return (
+                    <li key={l.label}>
+                      {l.hash ? (
+                        <a href={l.to} className={className}>{content}</a>
+                      ) : (
+                        <Link to={l.to} className={className}>{content}</Link>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs text-muted-foreground md:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 text-xs font-bold text-muted-foreground md:flex-row">
           <p>© {new Date().getFullYear()} Pawtomation, Inc. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-foreground">Privacy</a>
-            <a href="#" className="transition-colors hover:text-foreground">Terms</a>
-            <a href="#" className="transition-colors hover:text-foreground">Security</a>
-            <a href="#" className="transition-colors hover:text-foreground">Cookies</a>
+            <Link to="/privacy-policy" className="transition-colors hover:text-foreground">Privacy</Link>
+            <Link to="/terms-of-service" className="transition-colors hover:text-foreground">Terms</Link>
+            <Link to="/security" className="transition-colors hover:text-foreground">Security</Link>
+            <Link to="/cookies" className="transition-colors hover:text-foreground">Cookies</Link>
           </div>
         </div>
       </div>
