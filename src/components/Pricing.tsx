@@ -106,7 +106,7 @@ export function Pricing() {
           <div className="glass-strong relative rounded-[2rem] p-8 md:p-10">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal">Pawfolio Pro</p>
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-teal">Pawtomation Pro</p>
                 <p className="mt-1 text-sm text-muted-foreground">Everything your clinic needs.</p>
               </div>
               <div className="glass inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold text-teal">
@@ -172,8 +172,9 @@ export function Pricing() {
                 </span>
               </div>
               <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                Earn <span className="font-bold text-foreground">৳100</span> per pet parent on the History
-                subscription — recurring revenue, directly shared with your clinic.
+                Every pet parent on the History plan pays ৳100 for 35 days —{" "}
+                <span className="font-bold text-foreground">৳50 goes directly to your clinic</span> as
+                recurring revenue, forever. A brand-new income stream on top of your services.
               </p>
             </div>
           </div>
