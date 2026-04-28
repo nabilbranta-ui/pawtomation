@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { CoreModules } from "@/components/CoreModules";
 import { KeyBenefits } from "@/components/KeyBenefits";
+import { Testimonials } from "@/components/Testimonials";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -29,6 +30,7 @@ function Index() {
       <Hero />
       <CoreModules />
       <KeyBenefits />
+      <Testimonials />
     </main>
   );
 }
