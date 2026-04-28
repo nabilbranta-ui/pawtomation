@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, User, Mail, Phone, Building2, Users, CalendarClock, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { X, User, Mail, Phone, Building2, Users, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 
 const clinicSizes = ["Solo practice", "2–5 vets", "6–20 vets", "20+ vets"];
-const timeSlots = ["Today", "Tomorrow", "This week", "Next week"];
 
 export function BookDemoDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
   const [size, setSize] = useState(clinicSizes[1]);
-  const [slot, setSlot] = useState(timeSlots[1]);
   const [submitted, setSubmitted] = useState(false);
 
   const handleClose = (v: boolean) => {
