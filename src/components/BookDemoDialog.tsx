@@ -88,28 +88,6 @@ export function BookDemoDialog({ open, onOpenChange }: { open: boolean; onOpenCh
                               </div>
                             </div>
 
-                            <div>
-                              <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                                <CalendarClock className="size-3.5" /> Preferred time
-                              </label>
-                              <div className="grid grid-cols-4 gap-2">
-                                {timeSlots.map((t) => (
-                                  <button
-                                    type="button"
-                                    key={t}
-                                    onClick={() => setSlot(t)}
-                                    className={`rounded-xl border px-2 py-2 text-xs font-semibold transition-all ${
-                                      slot === t
-                                        ? "border-peach bg-peach/10 text-peach"
-                                        : "border-border bg-white/60 text-muted-foreground hover:bg-white/80"
-                                    }`}
-                                  >
-                                    {t}
-                                  </button>
-                                ))}
-                              </div>
-                            </div>
-
                             <textarea
                               placeholder="Anything specific you'd like us to cover?"
                               defaultValue="We'd like to see how inventory auto-deduction works with service recipes."
