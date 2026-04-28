@@ -1,14 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, User, Mail, Phone, Building2, Users, CalendarClock, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { X, User, Mail, Phone, Building2, Users, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
 
 const clinicSizes = ["Solo practice", "2–5 vets", "6–20 vets", "20+ vets"];
-const timeSlots = ["Today", "Tomorrow", "This week", "Next week"];
 
 export function BookDemoDialog({ open, onOpenChange }: { open: boolean; onOpenChange: (v: boolean) => void }) {
   const [size, setSize] = useState(clinicSizes[1]);
-  const [slot, setSlot] = useState(timeSlots[1]);
   const [submitted, setSubmitted] = useState(false);
 
   const handleClose = (v: boolean) => {
@@ -35,11 +33,11 @@ export function BookDemoDialog({ open, onOpenChange }: { open: boolean; onOpenCh
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, y: 10 }}
                 transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-                className="fixed left-1/2 top-1/2 z-[70] w-[min(520px,calc(100%-2rem))] max-h-[92vh] overflow-y-auto -translate-x-1/2 -translate-y-1/2"
+                className="fixed left-1/2 top-1/2 z-[70] w-[min(520px,calc(100%-2rem))] max-h-[92vh] -translate-x-1/2 -translate-y-1/2"
               >
-                <div className="relative">
+                <div className="relative max-h-[92vh] overflow-y-auto overflow-x-hidden rounded-[2rem] [scrollbar-width:thin] [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-foreground/15 [&::-webkit-scrollbar-track]:bg-transparent">
                   <div
-                    className="absolute -inset-[2px] rounded-[2rem] opacity-70 blur-xl"
+                    className="pointer-events-none absolute -inset-[2px] rounded-[2rem] opacity-70 blur-xl"
                     style={{ background: "linear-gradient(135deg, oklch(0.80 0.13 45 / 0.55), oklch(0.72 0.14 185 / 0.4))" }}
                   />
                   <div className="glass-strong relative rounded-[1.75rem] p-7">
@@ -85,28 +83,6 @@ export function BookDemoDialog({ open, onOpenChange }: { open: boolean; onOpenCh
                                     }`}
                                   >
                                     {s}
-                                  </button>
-                                ))}
-                              </div>
-                            </div>
-
-                            <div>
-                              <label className="mb-1.5 flex items-center gap-1.5 text-xs font-semibold text-muted-foreground">
-                                <CalendarClock className="size-3.5" /> Preferred time
-                              </label>
-                              <div className="grid grid-cols-4 gap-2">
-                                {timeSlots.map((t) => (
-                                  <button
-                                    type="button"
-                                    key={t}
-                                    onClick={() => setSlot(t)}
-                                    className={`rounded-xl border px-2 py-2 text-xs font-semibold transition-all ${
-                                      slot === t
-                                        ? "border-peach bg-peach/10 text-peach"
-                                        : "border-border bg-white/60 text-muted-foreground hover:bg-white/80"
-                                    }`}
-                                  >
-                                    {t}
                                   </button>
                                 ))}
                               </div>
