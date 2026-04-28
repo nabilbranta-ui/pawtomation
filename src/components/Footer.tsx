@@ -100,17 +100,59 @@ export function Footer() {
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               The all-in-one pet clinic management platform — built for modern veterinary teams.
             </p>
-            <div className="mt-6 flex items-center gap-2">
-              {socials.map((s, i) => (
+            <div className="mt-6 flex items-center gap-2.5">
+              {socials.map((s) => (
                 <a
-                  key={i}
+                  key={s.label}
                   href={s.href}
-                  className="glass grid size-10 place-items-center rounded-xl text-muted-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/80 hover:text-teal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="group relative grid size-11 place-items-center overflow-hidden rounded-xl border border-white/40 bg-white/50 text-muted-foreground backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:text-white hover:border-white/70"
+                  style={{
+                    // @ts-ignore CSS var
+                    "--brand": s.brand,
+                    "--glow": s.shadow,
+                  } as React.CSSProperties}
                 >
-                  <s.icon className="size-4" />
+                  <span
+                    className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ background: s.brand }}
+                  />
+                  <span
+                    className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    style={{ boxShadow: `0 12px 32px -8px rgb(${s.shadow} / 0.55), inset 0 1px 0 rgb(255 255 255 / 0.25)` }}
+                  />
+                  <s.Icon className="relative size-[18px] transition-transform duration-300 group-hover:scale-110" />
                 </a>
               ))}
             </div>
+
+            {/* Contact cards */}
+            <ul className="mt-6 space-y-2">
+              {contacts.map((c) => (
+                <li key={c.value}>
+                  <a
+                    href={c.href}
+                    target={c.href.startsWith("http") ? "_blank" : undefined}
+                    rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    className="group flex items-center gap-3 rounded-xl border border-white/40 bg-white/40 px-3 py-2.5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:border-white/70 hover:bg-white/70 hover:shadow-[0_10px_30px_-12px_oklch(0.72_0.14_185/0.45)]"
+                  >
+                    <span className={`grid size-9 place-items-center rounded-lg transition-all duration-300 ${
+                      c.accent === "teal" ? "bg-teal/10 text-teal group-hover:bg-teal group-hover:text-white" :
+                      c.accent === "whatsapp" ? "bg-[#25D366]/10 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white" :
+                      "bg-peach/10 text-peach group-hover:bg-peach group-hover:text-white"
+                    }`}>
+                      <c.Icon className="size-4" />
+                    </span>
+                    <span className="flex flex-col leading-tight">
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">{c.label}</span>
+                      <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-foreground">{c.value}</span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {columns.map((col) => (
